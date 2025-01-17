@@ -32,6 +32,11 @@ public class TileMap {
         int screenWidth = canvas.getWidth();
         int screenHeight = canvas.getHeight();
 
+        // Перевірка, чи масив map ініціалізований
+        if (map == null || map.length == 0 || map[0].length == 0) {
+            return; // Якщо масив порожній, нічого не малюємо
+        }
+
         // Визначення початкових та кінцевих координат для малювання
         int startX = Math.max(0, cameraX / tileSize);
         int startY = Math.max(0, cameraY / tileSize);
